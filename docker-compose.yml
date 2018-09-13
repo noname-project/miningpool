@@ -1,0 +1,192 @@
+version: "3.7"
+
+# Explicitly defined connector network to be able to set static IPs
+networks:
+  mining-pool:
+    name: mining-pool
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.100.0.0/24
+
+
+
+# Default settings for all containers.
+x-defaults:
+  &defaults
+
+  # Using automatically assigned ip address from connect network.
+  networks:
+    mining-pool:
+
+  # Using syslog driver and set tag to container_name.
+#  logging:
+#    driver: "json-file"
+
+  # Using json-file.
+  logging:
+    driver: "json-file"
+    options:
+        max-size: "200m"
+        max-file: "10"
+
+  # Restart on exit.
+  restart: always
+
+  # Wait for one minute for graceful shutdown
+  stop_grace_period: 1m
+
+
+
+services:
+
+  ######################################################################
+  #
+  # Environment variables and arguments
+  #
+  # This arguments and environment variables used across containers.
+  #
+  # EXTERNAL_IP is server's public IP address available for other
+  # nodes or clients to connect and used by daemon to announce
+  # right location.
+  #
+  ######################################################################
+
+  ######################################################################
+  #
+  # Containers
+  #
+  # This containers intended to be run on standalone machine. You should
+  # create new machine for each deploy.
+  #
+  ######################################################################
+
+  bitcoin:
+    << : *defaults
+    container_name: bitcoin
+    image: bitcoin
+    build:
+      context: ./bitcoin
+      args:
+        - BITCOIN_VERSION
+    environment:
+      - TESTNET
+      - EXTERNAL_IP
+      - BITCOIN_RPC_AUTH
+      - BITCOIN_RPC_USER
+      - BITCOIN_RPC_PASSWORD
+    volumes:
+      - $HOST_VOLUMES_ROOT/bitcoin:/root/.bitcoin
+    ports:
+      # P2P port
+      - "8333:8333"
+
+  bitcoin-cash:
+    << : *defaults
+    container_name: bitcoin-cash
+    image: bitcoin-cash
+    build:
+      context: ./bitcoin-cash
+      args:
+        - BITCOIN_CASH_VERSION
+    environment:
+      - TESTNET
+      - EXTERNAL_IP
+      - BITCOIN_CASH_RPC_AUTH
+      - BITCOIN_CASH_RPC_USER
+      - BITCOIN_CASH_RPC_PASSWORD
+    volumes:
+      - $HOST_VOLUMES_ROOT/bitcoin-cash:/root/.bitcoin
+    ports:
+      # P2P port
+      - "9333:9333"
+
+  dash:
+    << : *defaults
+    container_name: dash
+    image: dash
+    build:
+      context: ./dash
+      args:
+        - DASH_VERSION
+    environment:
+      - TESTNET
+      - EXTERNAL_IP
+      - DASH_RPC_AUTH
+      - DASH_RPC_USER
+      - DASH_RPC_PASSWORD
+    volumes:
+      - $HOST_VOLUMES_ROOT/dash:/root/.dashcore
+    ports:
+      # P2P port
+      - "10333:10333"
+
+  ethereum:
+    << : *defaults
+    container_name: ethereum
+    image: ethereum
+    build:
+      context: ./ethereum
+      args:
+        - ETHEREUM_VERSION
+    environment:
+      - TESTNET
+      - EXTERNAL_IP
+    volumes:
+      - $HOST_VOLUMES_ROOT/ethereum:/root/.ethereum
+    ports:
+      # P2P port
+      - "11333:11333"
+
+  litecoin:
+    << : *defaults
+    container_name: litecoin
+    image: litecoin
+    build:
+      context: ./litecoin
+      args:
+        - LITECOIN_VERSION
+    environment:
+      - TESTNET
+      - EXTERNAL_IP
+      - LITECOIN_RPC_AUTH
+      - LITECOIN_RPC_USER
+      - LITECOIN_RPC_PASSWORD
+    volumes:
+      - $HOST_VOLUMES_ROOT/litecoin:/root/.litecoin
+    ports:
+      # P2P port
+      - "12333:12333"
+
+  postgres:
+    <<: *defaults
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - $HOST_VOLUMES_ROOT/postgres:/var/lib/postgresql/data
+
+  miningcore:
+    << : *defaults
+    container_name: miningcore
+    image: coinfoundry/miningcore-docker
+    networks:
+      mining-pool:
+        ipv4_address: 172.100.0.100
+    volumes:
+      - /mining-pool/miningcore/config.json:/config.json:ro
+    ports:
+      # Stratum ports foreach asset.
+      - "3000-3004:3000-3004"
+      # API port.
+      - "127.0.0.1:4000:4000"
+    depends_on:
+    - bitcoin
+    - bitcoin-cash
+    - dash
+    - ethereum
+    - litecoin
+    - postgres
+    stop_signal: SIGINT

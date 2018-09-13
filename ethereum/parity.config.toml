@@ -1,0 +1,23 @@
+[network]
+# Parity will listen for connections on port 11333.
+port = 11333
+
+[rpc]
+# JSON-RPC over HTTP will be accessible on port 11332.
+port = 11332
+#  JSON-RPC will be listening for connections on IP 0.0.0.0.
+interface = "0.0.0.0"
+# Allow connections only using specified addresses.
+hosts = ["miningcore"]
+# Only selected APIs will be exposed over this interface.
+apis = ["web3", "eth", "net", "parity", "parity_pubsub", "rpc", "personal", "parity_accounts"]
+
+[websockets]
+# JSON-RPC over WebSockets will be accessible on port 11331.
+port = 11331
+#  JSON-RPC will be listening for connections on IP 0.0.0.0.
+interface = "0.0.0.0"
+# Allow connections only using specified addresses.
+hosts = ["miningcore"]
+# Only selected APIs will be exposed over this interface.
+apis = ["web3", "eth", "net", "parity", "parity_pubsub", "rpc", "personal", "parity_accounts"]

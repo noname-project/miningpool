@@ -1,0 +1,287 @@
+{
+
+
+
+  "logging": {
+    "level": "info",
+    "enableConsoleLog": true,
+    "enableConsoleColors": false,
+    "logFile": "",
+    "logBaseDirectory": "",
+    "perPoolLogFile": false
+  },
+
+
+
+  "banning": {
+    "manager": "integrated",
+    "banOnJunkReceive": true,
+    "banOnInvalidShares": false
+  },
+
+
+
+  "notifications": {
+    "enabled": false,
+  },
+
+
+
+  "persistence": {
+    "postgres": {
+      "host": "postgres",
+      "port": 5432,
+      "user": "miningcore",
+      "password": "password",
+      "database": "miningcore"
+    }
+  },
+
+
+
+  "paymentProcessing": {
+    "enabled": false
+  },
+
+
+
+  "api": {
+    "enabled": true,
+    "listenAddress": "0.0.0.0",
+    "port": 4000
+  },
+
+
+
+  "pools": [
+
+    {
+      "id": "btc",
+      "enabled": true,
+      "coin": {
+        "type": "BTC"
+      },
+      "address": "2N5Nb5AJX5vkcvnU35ZrR4gTM5XRzL6tneT",
+      "rewardRecipients": [{
+        "address": "2N4ts23GhfVh6V8bMsx7FNojAay6uYPSXPH",
+        "percentage": 100
+      }],
+      "blockRefreshInterval": 500,
+      "jobRebroadcastTimeout": 10,
+      "clientConnectionTimeout": 600,
+      "banning": {
+        "enabled": false,
+//        "time": 600,
+//        "invalidPercent": 50,
+//        "checkThreshold": 50
+      },
+      "ports": {
+        "3000": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 0.00000001,
+          "name": "CPU mining",
+          "varDiff": {
+            "minDiff": 0.01,
+            "targetTime": 15,
+            "retargetTime": 90,
+            "variancePercent": 30,
+            "maxDelta": 500
+          }
+        }
+      },
+      "daemons": [{
+        "host": "bitcoin",
+        "port": 8332,
+        "user": "user",
+        "password": "HN5jzwbVMrLbvbOLmIPfnriF0UrUBPe47Z8BgybLWIs=",
+        "zmqBlockNotifySocket": "tcp://bitcoin:8334"
+      }],
+      "paymentProcessing": {
+        "enabled": false
+      }
+    },
+
+    {
+      "id": "bch",
+      "enabled": true,
+      "coin": {
+        "type": "BCH"
+      },
+      "address": "myMDxpVuCnQSoqwfS2g6BQPJMobVVqshGa",
+      "rewardRecipients": [{
+        "address": "n3wkfGAC4LhotFvuvuokMYKUG6r3KuQ62t",
+        "percentage": 100
+      }],
+      "blockRefreshInterval": 500,
+      "jobRebroadcastTimeout": 10,
+      "clientConnectionTimeout": 600,
+      "banning": {
+        "enabled": false,
+//        "time": 600,
+//        "invalidPercent": 50,
+//        "checkThreshold": 50
+      },
+      "ports": {
+        "3001": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 0.00000001,
+          "name": "CPU mining",
+          "varDiff": {
+            "minDiff": 0.01,
+            "targetTime": 15,
+            "retargetTime": 90,
+            "variancePercent": 30,
+            "maxDelta": 500
+          }
+        }
+      },
+      "daemons": [{
+        "host": "bitcoin-cash",
+        "port": 9332,
+        "user": "user",
+        "password": "fpSnEI4kx8J7kdfBo0HXV1jDVb_12XWGnjbSxsY4KYQ=",
+        "zmqBlockNotifySocket": "tcp://bitcoin-cash:9334"
+      }],
+      "paymentProcessing": {
+        "enabled": false
+      }
+    },
+
+    {
+      "id": "dash",
+      "enabled": true,
+      "coin": {
+        "type": "DASH"
+      },
+      "address": "yP7EJ16ke9FLzFuqV2MpZQVefcwH34FRV9",
+      "rewardRecipients": [{
+        "address": "yRpjL5rojaEW5HSF3NKvN9MU5yi1eXNfFR",
+        "percentage": 100
+      }],
+      "blockRefreshInterval": 500,
+      "jobRebroadcastTimeout": 10,
+      "clientConnectionTimeout": 600,
+      "banning": {
+        "enabled": false,
+//        "time": 600,
+//        "invalidPercent": 50,
+//        "checkThreshold": 50
+      },
+      "ports": {
+        "3002": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 0.00000001,
+          "name": "CPU mining",
+          "varDiff": {
+            "minDiff": 0.01,
+            "targetTime": 15,
+            "retargetTime": 90,
+            "variancePercent": 30,
+            "maxDelta": 500
+          }
+        }
+      },
+      "daemons": [{
+        "host": "dash",
+        "port": 10332,
+        "user": "user",
+        "password": "FyS0Yvo_iNQbaUrrBykHQJAe47h3-dkFMHp8jQwLXls=",
+        "zmqBlockNotifySocket": "tcp://dash:10334"
+      }],
+      "paymentProcessing": {
+        "enabled": false
+      }
+    },
+
+    {
+      "id": "eth",
+      "enabled": true,
+      "coin": {
+        "type": "ETH"
+      },
+      "address": "0x3e334f289f656e2b4a820721c578174c304f4c61",
+      "rewardRecipients": [{
+        "address": "0x25fe0dfa2df4e0f0b961809806993e2f14534685",
+        "percentage": 100
+      }],
+      "blockRefreshInterval": 500,
+      "jobRebroadcastTimeout": 10,
+      "clientConnectionTimeout": 600,
+      "banning": {
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
+      },
+      "ports": {
+        "3003": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 0.00000001,
+          "name": "CPU mining",
+          "varDiff": {
+            "minDiff": 0.01,
+            "targetTime": 15,
+            "retargetTime": 90,
+            "variancePercent": 30,
+            "maxDelta": 500
+          }
+        }
+      },
+      "daemons": [{
+        "host": "ethereum",
+        "port": 11332,
+        "portWs": 11331
+      }],
+      "paymentProcessing": {
+        "enabled": false
+      }
+    },
+
+    {
+      "id": "ltc",
+      "enabled": true,
+      "coin": {
+        "type": "LTC"
+      },
+      "address": "QfsBk5oaYdXwyvDU4JeVZ59VsLNbFj1vyL",
+      "rewardRecipients": [        {
+        "address": "QVo9SZa1245vkSJ6ecPGyCFoNasiT9W8gR",
+        "percentage": 100
+      }],
+      "blockRefreshInterval": 500,
+      "jobRebroadcastTimeout": 10,
+      "clientConnectionTimeout": 600,
+      "banning": {
+        "enabled": false,
+//        "time": 600,
+//        "invalidPercent": 50,
+//        "checkThreshold": 50
+      },
+      "ports": {
+        "3004": {
+          "listenAddress": "0.0.0.0",
+          "difficulty": 0.00001,
+          "name": "CPU mining",
+          "varDiff": {
+            "minDiff": 0.01,
+            "targetTime": 15,
+            "retargetTime": 90,
+            "variancePercent": 30,
+            "maxDelta": 500
+          }
+        }
+      },
+      "daemons": [{
+        "host": "litecoin",
+        "port": 12332,
+        "user": "user",
+        "password": "3r6XvRcb3Qs-GP8K2kOsHsPkmt0pg7K9KcKhaNA4CL8=",
+        "zmqBlockNotifySocket": "tcp://litecoin:12334"
+      }],
+      "paymentProcessing": {
+        "enabled": false
+      }
+    }
+
+  ]
+}
