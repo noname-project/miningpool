@@ -22,7 +22,10 @@ From the root of repo run:
 make
 ```
 
-This will require time to download and install or necessary things.
+**!!! WARNING !!!** At first deploy this will require time to download and install or necessary things.
+Moreover you will need 50+ GB disk space and 8GB+ RAM to sync all blockchains simultaneously.
+Syncing will take hours (one night for example). If you have not enough RAM or disk space
+you can stop some dockers.
 
 ### Available ports
 
