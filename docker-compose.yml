@@ -30,8 +30,8 @@ x-defaults:
         max-size: "200m"
         max-file: "10"
 
-  # Restart on exit.
-  restart: always
+  # Restart on exit unless manually stopped.
+  restart: unless-stopped
 
   # Wait for one minute for graceful shutdown
   stop_grace_period: 1m
@@ -162,7 +162,6 @@ services:
     <<: *defaults
     container_name: postgres
     image: postgres
-    restart: always
     environment:
       POSTGRES_PASSWORD: password
     volumes:
@@ -190,3 +189,5 @@ services:
     - litecoin
     - postgres
     stop_signal: SIGINT
+    # Wait for 10 seconds for graceful shutdown
+    stop_grace_period: 10s
