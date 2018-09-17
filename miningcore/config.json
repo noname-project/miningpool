@@ -208,16 +208,16 @@
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
-        "enabled": true,
-        "time": 600,
-        "invalidPercent": 50,
-        "checkThreshold": 50
+        "enabled": false,
+//        "time": 600,
+//        "invalidPercent": 50,
+//        "checkThreshold": 50
       },
       "ports": {
         "3003": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.00000001,
-          "name": "CPU mining",
+          "difficulty": 0.02,
+          "name": "GPU mining",
           "varDiff": {
             "minDiff": 0.01,
             "targetTime": 15,
