@@ -78,7 +78,7 @@
       "ports": {
         "3000": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.00000001,
+          "difficulty": 0.03,
           "name": "CPU mining",
           "varDiff": {
             "minDiff": 0.01,
@@ -124,7 +124,7 @@
       "ports": {
         "3001": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.00000001,
+          "difficulty": 0.03,
           "name": "CPU mining",
           "varDiff": {
             "minDiff": 0.01,
@@ -170,7 +170,7 @@
       "ports": {
         "3002": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.00000001,
+          "difficulty": 0.0001,
           "name": "CPU mining",
           "varDiff": {
             "minDiff": 0.01,
@@ -260,7 +260,7 @@
       "ports": {
         "3004": {
           "listenAddress": "0.0.0.0",
-          "difficulty": 0.00001,
+          "difficulty": 3,
           "name": "CPU mining",
           "varDiff": {
             "minDiff": 0.01,
