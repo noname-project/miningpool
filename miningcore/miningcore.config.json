@@ -62,10 +62,10 @@
         "type": "BTC"
       },
       "address": "2N5Nb5AJX5vkcvnU35ZrR4gTM5XRzL6tneT",
-      "rewardRecipients": [{
-        "address": "2N4ts23GhfVh6V8bMsx7FNojAay6uYPSXPH",
-        "percentage": 100
-      }],
+//      "rewardRecipients": [{
+//        "address": "2N4ts23GhfVh6V8bMsx7FNojAay6uYPSXPH",
+//        "percentage": 100
+//      }],
       "blockRefreshInterval": 500,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -97,7 +97,9 @@
         "zmqBlockNotifySocket": "tcp://bitcoin:8334"
       }],
       "paymentProcessing": {
-        "enabled": false
+        "enabled": true,
+        "interval": 600,
+        "shareRecoveryFile": "recovered-shares-btc.txt"
       }
     },
 
@@ -108,10 +110,10 @@
         "type": "BCH"
       },
       "address": "myMDxpVuCnQSoqwfS2g6BQPJMobVVqshGa",
-      "rewardRecipients": [{
-        "address": "n3wkfGAC4LhotFvuvuokMYKUG6r3KuQ62t",
-        "percentage": 100
-      }],
+//      "rewardRecipients": [{
+//        "address": "n3wkfGAC4LhotFvuvuokMYKUG6r3KuQ62t",
+//        "percentage": 100
+//      }],
       "blockRefreshInterval": 500,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -143,7 +145,9 @@
         "zmqBlockNotifySocket": "tcp://bitcoin-cash:9334"
       }],
       "paymentProcessing": {
-        "enabled": false
+        "enabled": true,
+        "interval": 600,
+        "shareRecoveryFile": "recovered-shares-bch.txt"
       }
     },
 
@@ -154,10 +158,10 @@
         "type": "DASH"
       },
       "address": "yP7EJ16ke9FLzFuqV2MpZQVefcwH34FRV9",
-      "rewardRecipients": [{
-        "address": "yRpjL5rojaEW5HSF3NKvN9MU5yi1eXNfFR",
-        "percentage": 100
-      }],
+//      "rewardRecipients": [{
+//        "address": "yRpjL5rojaEW5HSF3NKvN9MU5yi1eXNfFR",
+//        "percentage": 100
+//      }],
       "blockRefreshInterval": 500,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -189,7 +193,9 @@
         "zmqBlockNotifySocket": "tcp://dash:10334"
       }],
       "paymentProcessing": {
-        "enabled": false
+        "enabled": true,
+        "interval": 600,
+        "shareRecoveryFile": "recovered-shares-dash.txt"
       }
     },
 
@@ -200,10 +206,10 @@
         "type": "ETH"
       },
       "address": "0x3e334f289f656e2b4a820721c578174c304f4c61",
-      "rewardRecipients": [{
-        "address": "0x25fe0dfa2df4e0f0b961809806993e2f14534685",
-        "percentage": 100
-      }],
+//      "rewardRecipients": [{
+//        "address": "0x25fe0dfa2df4e0f0b961809806993e2f14534685",
+//        "percentage": 100
+//      }],
       "blockRefreshInterval": 500,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -233,7 +239,9 @@
         "portWs": 11331
       }],
       "paymentProcessing": {
-        "enabled": false
+        "enabled": true,
+        "interval": 600,
+        "shareRecoveryFile": "recovered-shares-eth.txt"
       }
     },
 
@@ -244,10 +252,10 @@
         "type": "LTC"
       },
       "address": "QfsBk5oaYdXwyvDU4JeVZ59VsLNbFj1vyL",
-      "rewardRecipients": [        {
-        "address": "QVo9SZa1245vkSJ6ecPGyCFoNasiT9W8gR",
-        "percentage": 100
-      }],
+//      "rewardRecipients": [        {
+//        "address": "QVo9SZa1245vkSJ6ecPGyCFoNasiT9W8gR",
+//        "percentage": 100
+//      }],
       "blockRefreshInterval": 500,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -279,7 +287,9 @@
         "zmqBlockNotifySocket": "tcp://litecoin:12334"
       }],
       "paymentProcessing": {
-        "enabled": false
+        "enabled": true,
+        "interval": 600,
+        "shareRecoveryFile": "recovered-shares-ltc.txt"
       }
     }
 
