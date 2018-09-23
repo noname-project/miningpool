@@ -170,24 +170,20 @@ services:
   miningcore:
     << : *defaults
     container_name: miningcore
-    image: coinfoundry/miningcore-docker
+    image: miningcore
+    build:
+      context: ./miningcore
+      args:
+        - MININGCORE_REVISION
     networks:
       mining-pool:
         ipv4_address: 172.100.0.100
     volumes:
-      - /mining-pool/miningcore/config.json:/config.json:ro
+      - $HOST_VOLUMES_ROOT/miningcore/recover:/miningcore/recover/
     ports:
       # Stratum ports foreach asset.
       - "3000-3004:3000-3004"
       # API port.
       - "127.0.0.1:4000:4000"
     depends_on:
-    - bitcoin
-    - bitcoin-cash
-    - dash
-    - ethereum
-    - litecoin
-    - postgres
-    stop_signal: SIGINT
-    # Wait for 10 seconds for graceful shutdown
-    stop_grace_period: 10s
+      - postgres
