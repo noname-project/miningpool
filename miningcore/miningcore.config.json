@@ -40,7 +40,8 @@
 
 
   "paymentProcessing": {
-    "enabled": false
+    "enabled": true,
+    "shareRecoveryFile": "/miningcore/recover/shares.txt"
   },
 
 
@@ -57,7 +58,7 @@
 
     {
       "id": "btc",
-      "enabled": true,
+      "enabled": false,
       "coin": {
         "type": "BTC"
       },
@@ -66,7 +67,7 @@
 //        "address": "2N4ts23GhfVh6V8bMsx7FNojAay6uYPSXPH",
 //        "percentage": 100
 //      }],
-      "blockRefreshInterval": 500,
+      "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
@@ -99,13 +100,13 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "recovered-shares-btc.txt"
+        "shareRecoveryFile": "/miningcore/recover/btc-shares.txt"
       }
     },
 
     {
       "id": "bch",
-      "enabled": true,
+      "enabled": false,
       "coin": {
         "type": "BCH"
       },
@@ -114,7 +115,7 @@
 //        "address": "n3wkfGAC4LhotFvuvuokMYKUG6r3KuQ62t",
 //        "percentage": 100
 //      }],
-      "blockRefreshInterval": 500,
+      "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
@@ -147,13 +148,13 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "recovered-shares-bch.txt"
+        "shareRecoveryFile": "/miningcore/recover/bch-shares.txt"
       }
     },
 
     {
       "id": "dash",
-      "enabled": true,
+      "enabled": false,
       "coin": {
         "type": "DASH"
       },
@@ -162,7 +163,7 @@
 //        "address": "yRpjL5rojaEW5HSF3NKvN9MU5yi1eXNfFR",
 //        "percentage": 100
 //      }],
-      "blockRefreshInterval": 500,
+      "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
@@ -195,13 +196,13 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "recovered-shares-dash.txt"
+        "shareRecoveryFile": "/miningcore/recover/dash-shares.txt"
       }
     },
 
     {
       "id": "eth",
-      "enabled": true,
+      "enabled": false,
       "coin": {
         "type": "ETH"
       },
@@ -210,7 +211,7 @@
 //        "address": "0x25fe0dfa2df4e0f0b961809806993e2f14534685",
 //        "percentage": 100
 //      }],
-      "blockRefreshInterval": 500,
+      "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
@@ -241,7 +242,7 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "recovered-shares-eth.txt"
+        "shareRecoveryFile": "/miningcore/recover/eth-shares.txt"
       }
     },
 
@@ -251,12 +252,12 @@
       "coin": {
         "type": "LTC"
       },
-      "address": "QfsBk5oaYdXwyvDU4JeVZ59VsLNbFj1vyL",
+      "address": "mkT5XnD2Jyvt38mmSReJyGMHJMszx9Zk4F",
 //      "rewardRecipients": [        {
 //        "address": "QVo9SZa1245vkSJ6ecPGyCFoNasiT9W8gR",
 //        "percentage": 100
 //      }],
-      "blockRefreshInterval": 500,
+      "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
@@ -288,8 +289,13 @@
       }],
       "paymentProcessing": {
         "enabled": true,
-        "interval": 600,
-        "shareRecoveryFile": "recovered-shares-ltc.txt"
+        "interval": 60,
+        "shareRecoveryFile": "/miningcore/recover/ltc-shares.txt",
+        "minimumPayment": 0.00000001,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        }
       }
     }
 
