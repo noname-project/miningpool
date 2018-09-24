@@ -63,10 +63,12 @@
         "type": "BTC"
       },
       "address": "2N5Nb5AJX5vkcvnU35ZrR4gTM5XRzL6tneT",
-//      "rewardRecipients": [{
+      "rewardRecipients": [
+//        {
 //        "address": "2N4ts23GhfVh6V8bMsx7FNojAay6uYPSXPH",
 //        "percentage": 100
-//      }],
+//      }
+      ],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -111,10 +113,12 @@
         "type": "BCH"
       },
       "address": "myMDxpVuCnQSoqwfS2g6BQPJMobVVqshGa",
-//      "rewardRecipients": [{
+      "rewardRecipients": [
+//        {
 //        "address": "n3wkfGAC4LhotFvuvuokMYKUG6r3KuQ62t",
 //        "percentage": 100
-//      }],
+//      }
+      ],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -159,10 +163,12 @@
         "type": "DASH"
       },
       "address": "yP7EJ16ke9FLzFuqV2MpZQVefcwH34FRV9",
-//      "rewardRecipients": [{
+      "rewardRecipients": [
+//        {
 //        "address": "yRpjL5rojaEW5HSF3NKvN9MU5yi1eXNfFR",
 //        "percentage": 100
-//      }],
+//      }
+      ],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -207,10 +213,12 @@
         "type": "ETH"
       },
       "address": "0x3e334f289f656e2b4a820721c578174c304f4c61",
-//      "rewardRecipients": [{
+      "rewardRecipients": [
+//        {
 //        "address": "0x25fe0dfa2df4e0f0b961809806993e2f14534685",
 //        "percentage": 100
-//      }],
+//      }
+      ],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
@@ -253,10 +261,12 @@
         "type": "LTC"
       },
       "address": "mkT5XnD2Jyvt38mmSReJyGMHJMszx9Zk4F",
-//      "rewardRecipients": [        {
+      "rewardRecipients": [
+//        {
 //        "address": "QVo9SZa1245vkSJ6ecPGyCFoNasiT9W8gR",
 //        "percentage": 100
-//      }],
+//      }
+      ],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
