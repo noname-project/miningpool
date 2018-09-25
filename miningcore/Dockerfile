@@ -1,7 +1,5 @@
 FROM microsoft/dotnet:2.1-sdk AS builder
 
-ARG MININGCORE_REVISION
-
 RUN apt-get update -y && \
 apt-get -y install --no-install-recommends \
 git cmake build-essential libssl-dev pkg-config \
@@ -18,6 +16,8 @@ COPY private.key ./id_rsa
 RUN ssh-keyscan bitbucket.org >> known_hosts
 
 WORKDIR /miningcore
+
+ARG MININGCORE_REVISION
 
 RUN git clone git@bitbucket.org:boomstarternetwork/miningcore.git . && \
 git checkout $MININGCORE_REVISION

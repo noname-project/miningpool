@@ -1,11 +1,11 @@
 FROM ubuntu:18.04 AS builder
 
-ARG DASH_VERSION
-
 RUN apt-get update && apt-get install -y \
 ca-certificates \
 curl \
 && rm -rf /var/lib/apt/lists/*
+
+ARG DASH_VERSION
 
 RUN curl -L https://github.com/dashpay/dash/releases/download/v$DASH_VERSION/dashcore-${DASH_VERSION}-x86_64-linux-gnu.tar.gz \
 | tar xz --wildcards --strip 2 \

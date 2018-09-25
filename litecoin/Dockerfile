@@ -1,11 +1,11 @@
 FROM ubuntu:18.04 AS builder
 
-ARG LITECOIN_VERSION
-
 RUN apt-get update && apt-get install -y \
 ca-certificates \
 curl \
 && rm -rf /var/lib/apt/lists/*
+
+ARG LITECOIN_VERSION
 
 RUN curl https://download.litecoin.org/litecoin-$LITECOIN_VERSION/linux/litecoin-${LITECOIN_VERSION}-x86_64-linux-gnu.tar.gz \
 | tar xz --wildcards --strip 2 \

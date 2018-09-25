@@ -1,11 +1,11 @@
 FROM ubuntu:18.04 AS builder
 
-ARG BITCOIN_VERSION
-
 RUN apt-get update && apt-get install -y \
 ca-certificates \
 curl \
 && rm -rf /var/lib/apt/lists/*
+
+ARG BITCOIN_VERSION
 
 RUN curl https://bitcoin.org/bin/bitcoin-core-$BITCOIN_VERSION/bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz \
 | tar xz --wildcards --strip 2 \
