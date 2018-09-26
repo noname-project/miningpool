@@ -63,20 +63,15 @@
         "type": "BTC"
       },
       "address": "2N5Nb5AJX5vkcvnU35ZrR4gTM5XRzL6tneT",
-      "rewardRecipients": [
-//        {
-//        "address": "2N4ts23GhfVh6V8bMsx7FNojAay6uYPSXPH",
-//        "percentage": 100
-//      }
-      ],
+      "rewardRecipients": [],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
-        "enabled": false,
-//        "time": 600,
-//        "invalidPercent": 50,
-//        "checkThreshold": 50
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
       },
       "ports": {
         "3000": {
@@ -113,20 +108,15 @@
         "type": "BCH"
       },
       "address": "myMDxpVuCnQSoqwfS2g6BQPJMobVVqshGa",
-      "rewardRecipients": [
-//        {
-//        "address": "n3wkfGAC4LhotFvuvuokMYKUG6r3KuQ62t",
-//        "percentage": 100
-//      }
-      ],
+      "rewardRecipients": [],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
-        "enabled": false,
-//        "time": 600,
-//        "invalidPercent": 50,
-//        "checkThreshold": 50
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
       },
       "ports": {
         "3001": {
@@ -163,20 +153,15 @@
         "type": "DASH"
       },
       "address": "yP7EJ16ke9FLzFuqV2MpZQVefcwH34FRV9",
-      "rewardRecipients": [
-//        {
-//        "address": "yRpjL5rojaEW5HSF3NKvN9MU5yi1eXNfFR",
-//        "percentage": 100
-//      }
-      ],
+      "rewardRecipients": [],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
-        "enabled": false,
-//        "time": 600,
-//        "invalidPercent": 50,
-//        "checkThreshold": 50
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
       },
       "ports": {
         "3002": {
@@ -213,20 +198,15 @@
         "type": "ETH"
       },
       "address": "0x3e334f289f656e2b4a820721c578174c304f4c61",
-      "rewardRecipients": [
-//        {
-//        "address": "0x25fe0dfa2df4e0f0b961809806993e2f14534685",
-//        "percentage": 100
-//      }
-      ],
+      "rewardRecipients": [],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
-        "enabled": false,
-//        "time": 600,
-//        "invalidPercent": 50,
-//        "checkThreshold": 50
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
       },
       "ports": {
         "3003": {
@@ -261,20 +241,15 @@
         "type": "LTC"
       },
       "address": "mkT5XnD2Jyvt38mmSReJyGMHJMszx9Zk4F",
-      "rewardRecipients": [
-//        {
-//        "address": "QVo9SZa1245vkSJ6ecPGyCFoNasiT9W8gR",
-//        "percentage": 100
-//      }
-      ],
+      "rewardRecipients": [],
       "blockRefreshInterval": 1000,
       "jobRebroadcastTimeout": 10,
       "clientConnectionTimeout": 600,
       "banning": {
-        "enabled": false,
-//        "time": 600,
-//        "invalidPercent": 50,
-//        "checkThreshold": 50
+        "enabled": true,
+        "time": 600,
+        "invalidPercent": 50,
+        "checkThreshold": 50
       },
       "ports": {
         "3004": {
@@ -297,7 +272,7 @@
         "password": "3r6XvRcb3Qs-GP8K2kOsHsPkmt0pg7K9KcKhaNA4CL8=",
         "zmqBlockNotifySocket": "tcp://litecoin:12334"
       }],
-      "paymentProcessing": {
+      "paymentProcessing": {  
         "enabled": true,
         "interval": 60,
         "shareRecoveryFile": "/miningcore/recover/ltc-shares.txt",
