@@ -167,6 +167,21 @@ services:
     volumes:
       - $HOST_VOLUMES_ROOT/postgres:/var/lib/postgresql/data
 
+  minerserver:
+    << : *defaults
+    container_name: minerserver
+    image: minerserver
+    build:
+      context: ./minerserver
+      args:
+        - MINERSERVER_REVISION
+    environment:
+      - MINERSERVER_POSTGRES_CONNECTION_STRING
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+
   miningcore:
     << : *defaults
     container_name: miningcore
