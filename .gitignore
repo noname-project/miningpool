@@ -1,1 +1,7 @@
 .idea
+
+# SHA keys pair used to clone bitbucket.org private git repository in
+# Dockerfile. You should generate your own keys pair and add public one
+# in bitbucket account settings.
+private.key
+public.key
