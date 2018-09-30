@@ -58,7 +58,7 @@
 
     {
       "id": "btc",
-      "enabled": false,
+      "enabled": true,
       "coin": {
         "type": "BTC"
       },
@@ -97,13 +97,18 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "/miningcore/recover/btc-shares.txt"
+        "shareRecoveryFile": "/miningcore/recover/btc-shares.txt",
+        "minimumPayment": 0.00000001,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        }
       }
     },
 
     {
       "id": "bch",
-      "enabled": false,
+      "enabled": true,
       "coin": {
         "type": "BCH"
       },
@@ -142,13 +147,18 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "/miningcore/recover/bch-shares.txt"
+        "shareRecoveryFile": "/miningcore/recover/bch-shares.txt",
+        "minimumPayment": 0.00000001,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        }
       }
     },
 
     {
       "id": "dash",
-      "enabled": false,
+      "enabled": true,
       "coin": {
         "type": "DASH"
       },
@@ -187,13 +197,18 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "/miningcore/recover/dash-shares.txt"
+        "shareRecoveryFile": "/miningcore/recover/dash-shares.txt",
+        "minimumPayment": 0.00000001,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        }
       }
     },
 
     {
       "id": "eth",
-      "enabled": false,
+      "enabled": true,
       "coin": {
         "type": "ETH"
       },
@@ -230,7 +245,13 @@
       "paymentProcessing": {
         "enabled": true,
         "interval": 600,
-        "shareRecoveryFile": "/miningcore/recover/eth-shares.txt"
+        "shareRecoveryFile": "/miningcore/recover/eth-shares.txt",
+        "minimumPayment": 0.00000001,
+        "payoutScheme": "PPLNS",
+        "payoutSchemeConfig": {
+          "factor": 2.0
+        },
+        coinbasePassword: "",
       }
     },
 
