@@ -25,6 +25,8 @@ EXPOSE 9333
 # ZeroMQ port.
 EXPOSE 9334
 
+RUN echo 'alias cli="bitcoin-cash-cli -rpcuser=$BITCOIN_CASH_RPC_USER -rpcpassword=$BITCOIN_CASH_RPC_PASSWORD"' > /root/.bash_aliases
+
 # Copying required binaries from builder stage.
 COPY --from=builder bitcoind  /usr/local/bin/bitcoin-cashd
 COPY --from=builder bitcoin-cli /usr/local/bin/bitcoin-cash-cli

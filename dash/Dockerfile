@@ -25,6 +25,8 @@ EXPOSE 10333
 # ZeroMQ port.
 EXPOSE 10334
 
+RUN echo 'alias cli="dash-cli -rpcuser=$DASH_RPC_USER -rpcpassword=$DASH_RPC_PASSWORD"' > /root/.bash_aliases
+
 # Copying required binaries from builder stage.
 COPY --from=builder dashd dash-cli /usr/local/bin/
 

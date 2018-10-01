@@ -25,6 +25,8 @@ EXPOSE 8333
 # ZeroMQ port.
 EXPOSE 8334
 
+RUN echo 'alias cli="bitcoin-cli -rpcuser=$BITCOIN_RPC_USER -rpcpassword=$BITCOIN_RPC_PASSWORD"' > /root/.bash_aliases
+
 # Copying required binaries from builder stage.
 COPY --from=builder bitcoind bitcoin-cli /usr/local/bin/
 

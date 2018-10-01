@@ -25,6 +25,8 @@ EXPOSE 12333
 # ZeroMQ port.
 EXPOSE 12334
 
+RUN echo 'alias cli="litecoin-cli -rpcuser=$LITECOIN_RPC_USER -rpcpassword=$LITECOIN_RPC_PASSWORD"' > /root/.bash_aliases
+
 # Copying required binaries from builder stage.
 COPY --from=builder litecoind litecoin-cli /usr/local/bin/
 
