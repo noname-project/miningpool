@@ -178,9 +178,24 @@ services:
     environment:
       - MINERSERVER_POSTGRES_CONNECTION_STRING
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - postgres
+
+  mineradmin:
+    <<: *defaults
+    container_name: mineradmin
+    image: mineradmin
+    build:
+      context: ./mineradmin
+      args:
+      - MINERADMIN_REVISION
+    environment:
+    - MINERADMIN_POSTGRES_CONNECTION_STRING
+    ports:
+    - "80:80"
+    depends_on:
+    - postgres
 
   miningcore:
     << : *defaults
