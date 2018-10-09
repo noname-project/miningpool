@@ -19,15 +19,11 @@ x-defaults:
   networks:
     mining-pool:
 
-  # Using syslog driver and set tag to container_name.
-#  logging:
-#    driver: "json-file"
-
   # Using json-file.
   logging:
     driver: "json-file"
     options:
-        max-size: "200m"
+        max-size: "20m"
         max-file: "10"
 
   # Restart on exit unless manually stopped.
@@ -178,7 +174,7 @@ services:
     environment:
       - MINERSERVER_POSTGRES_CONNECTION_STRING
     ports:
-      - "8080:80"
+      - "8080:8080"
     depends_on:
       - postgres
 
@@ -193,7 +189,7 @@ services:
     environment:
     - MINERADMIN_POSTGRES_CONNECTION_STRING
     ports:
-    - "80:80"
+    - "127.0.0.1:80:80"
     depends_on:
     - postgres
 
