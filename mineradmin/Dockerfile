@@ -1,27 +1,21 @@
 FROM golang:1.11 AS builder
 
-WORKDIR /root/.ssh
+RUN go get github.com/golang/dep/...
 
-# SHA private key from keys pair used to clone bitbucket.org private git
-# repository in Dockerfile. You should generate your own keys pair and
-# add public one in bitbucket account settings.
-COPY private.key ./id_rsa
-
-# Make sure domain is accepted.
-RUN ssh-keyscan bitbucket.org >> known_hosts
-
-WORKDIR /go/src/mineradmin
-
-RUN go get -u github.com/golang/dep/...
+WORKDIR /go/src/github.com/boomstarternetwork/mineradmin
 
 ARG MINERADMIN_REVISION
 
-RUN git clone git@bitbucket.org:boomstarternetwork/mineradmin.git . && \
-git checkout $MINERADMIN_REVISION
+WORKDIR $GOPATH/src/github.com/boomstarternetwork/mineradmin
+
+RUN curl -L https://github.com/boomstarternetwork/mineradmin/archive/$MINERADMIN_REVISION.tar.gz \
+| tar xz --strip 1
 
 RUN dep ensure -v
+
 RUN go test ./...
-RUN CGO_ENABLED=0 go install -v ./...
+
+RUN CGO_ENABLED=0 go install -v .
 
 
 
