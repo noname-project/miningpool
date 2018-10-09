@@ -9,7 +9,9 @@ WORKDIR /
 
 ARG ETHEREUM_VERSION
 
-RUN wget https://releases.parity.io/v$ETHEREUM_VERSION/x86_64-unknown-linux-gnu/parity_${ETHEREUM_VERSION}_ubuntu_amd64.deb
+RUN wget https://releases.parity.io/v$ETHEREUM_VERSION/x86_64-unknown-linux-gnu/parity
+
+RUN chmod +x /parity
 
 
 
@@ -24,17 +26,7 @@ EXPOSE 11332
 # P2P port.
 EXPOSE 11333
 
-# Installing dependencies.
-RUN apt-get update && apt-get install -y \
-libssl1.0.0 \
-&& rm -rf /var/lib/apt/lists/*
-
-ARG ETHEREUM_VERSION
-
-# Copying required binaries from builder stage.
-COPY --from=builder /parity_${ETHEREUM_VERSION}_ubuntu_amd64.deb /
-
-RUN dpkg -i parity_${ETHEREUM_VERSION}_ubuntu_amd64.deb
+COPY --from=builder /parity /usr/local/bin
 
 # Default config and genesis used to initalize datadir volume
 # at first or cleaned deploy.
